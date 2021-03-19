@@ -1,0 +1,32 @@
+{% include "blog/index.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+    <div class="content-section">
+        <div id="page-wrapper" >
+            <div class="header"> 
+                  <h1 class="page-header">
+                        Forms  <small>Update git & redmine project</small>
+                              </h1>   								
+                </div>          
+          <div id="page-inner"> 
+                       
+            <div class="row">
+                <div class="col-md-12">
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Update project</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-success" type="submit">update</button>
+                <a  class="btn btn-primary" href="{% url 'blog-home' %}">Cancel</a>
+
+            </div>
+        </form>
+    </div>
+    </div>
+    </div>
+{% endblock content %}

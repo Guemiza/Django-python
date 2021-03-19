@@ -1,0 +1,32 @@
+{% include "blog/index.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <div class="content-section">
+            <div id="page-wrapper" >
+                <div class="header"> 
+                      <h1 class="page-header">
+                           Add your <small>Namespace </small>
+                        								
+                    </div>          
+              <div id="page-inner"> 
+                           
+                <div class="row">
+                    <div class="col-md-12">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Create your Namespace</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button  class="btn btn-success" type="submit">save</button>
+                <a  class="btn btn-primary" href="{% url 'blog-about' %}">Cancel</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+{% endblock content %}

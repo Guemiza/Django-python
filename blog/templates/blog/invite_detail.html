@@ -1,0 +1,111 @@
+{% include "blog/index.html" %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+    <html>
+    <head>
+        <!-- TABLE STYLES-->
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <link href="{% static 'blog/dataTables.bootstrap.css'%}" rel="stylesheet" />  
+  </head>
+<body>
+  <div id="page-wrapper" >
+    <div class="header"> 
+          <h1 class="page-header">
+                 Permission Management<small></small>
+                      </h1>
+          								
+		</div>          
+  <div id="page-inner"> 
+               
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Advanced Tables -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                     
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                      <div class="button">
+                
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example" >
+                            <thead>
+                           
+                  <tr>
+                   
+                    <th>Users</th>
+                    <th >Projects</th>
+                    <th >Role permission</th>
+                    <th >Date</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                   </tr>
+              </thead>
+    <tbody>
+      {% for post in object_list %}
+      <tr>
+            <td scope="col">{{ post.user }}</td>
+            <td scope="col">{{ post.project_id }}</td>
+          
+            {% if post.Choose_a_role_permission == "50" %}
+            <td scope="col">Manager</td> 
+            {%endif%}
+           
+            {% if post.Choose_a_role_permission == "20" %}
+            <td scope="col">Reporter</td> 
+            {%endif%}
+         
+              {% if post.Choose_a_role_permission == "30" %}
+              <td scope="col">Developer</td> 
+              {%endif%}
+              {% if post.Choose_a_role_permission == "0" %}
+              <td scope="col">No access</td> 
+              {%endif%}
+                <td scope="col"> {{ post.expires_at|date:"F d, Y" }}</td> 
+           
+          
+               
+    {% if user.is_authenticated %}
+    <td><a class="btn btn-warning"  href="{% url 'permission-update' post.id %}">Update</a></td>
+    <td><a class="btn btn-sm btn-danger" href ="{% url 'permission-delete' post.id %}">Delete</a></td>
+    {%endif%}
+</td>   
+  </tr>
+ 
+  {% endfor %}
+  
+     
+  </tbody>
+
+  </table>
+</div>
+ </div>
+ </div>
+ </div>
+ </div>                           
+</div>
+</div>  
+ <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="{%static 'js/jquery-1.10.2.js'%}"></script>
+      <!-- Bootstrap Js -->
+    <script src="{%static 'js/bootstrap.min.js'%}"></script>
+    <!-- Metis Menu Js -->
+    <script src="{%static 'js/jquery.metisMenu.js'%}"></script>
+     <!-- DATA TABLE SCRIPTS -->
+    <script src="{%static 'js/jquery.dataTables.js'%}"></script>
+    <script src="{%static 'js/dataTables.bootstrap.js'%}"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
+         <!-- Custom Js -->
+    <script src="{%static 'js/custom-scripts.js'%}"></script>
+    
+   
+</body>
+</html>
+
+{% endblock content %}

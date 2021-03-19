@@ -1,0 +1,99 @@
+{% include "blog/index.html" %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+    <html>
+    <head>
+        <!-- TABLE STYLES-->
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <link href="{% static 'blog/dataTables.bootstrap.css'%}" rel="stylesheet" />  
+  </head>
+<body>
+  <div id="page-wrapper" >
+    <div class="header"> 
+          <h1 class="page-header">
+                 Permission Quota<small></small>
+                      </h1>
+          								
+		</div>          
+  <div id="page-inner"> 
+               
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Advanced Tables -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                     
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                      <div class="button">
+                
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example" >
+                            <thead>
+                           
+                  <tr>
+                    <th>Namespace</th>
+                    <th>Type quota</th>
+                    <th >Quota</th>
+                    <th >CPU</th>
+                    <th >Limit CPU</th>
+                    <th >Memory</th>
+                    <th >Limit Memory</th>
+                    <th>Action</th>
+                   </tr>
+              </thead>
+    <tbody>
+      {% for post in object_list %}
+      <tr>
+            <td scope="col">{{ post.namespace}}</td>
+            <td scope="col">{{ post.choice_quota}}</td>
+            <td scope="col"> {{ post.quota}}</td> 
+            <td scope="col"> {{ post.CPU}}</td> 
+            <td scope="col"> {{ post.limit_cpu}}</td> 
+            <td scope="col"> {{ post.Memory}}</td> 
+            <td scope="col"> {{ post.Limit_memory}}</td> 
+         
+    {% if user.is_authenticated %}
+  
+    <td><a class="btn btn-sm btn-danger" href ="{% url 'quota-delete' post.id %}">Delete</a></td>
+    {%endif%}
+</td>   
+  </tr>
+ 
+  {% endfor %}
+  
+     
+  </tbody>
+
+  </table>
+</div>
+ </div>
+ </div>
+ </div>
+ </div>                           
+</div>
+</div>  
+ <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="{%static 'js/jquery-1.10.2.js'%}"></script>
+      <!-- Bootstrap Js -->
+    <script src="{%static 'js/bootstrap.min.js'%}"></script>
+    <!-- Metis Menu Js -->
+    <script src="{%static 'js/jquery.metisMenu.js'%}"></script>
+     <!-- DATA TABLE SCRIPTS -->
+    <script src="{%static 'js/jquery.dataTables.js'%}"></script>
+    <script src="{%static 'js/dataTables.bootstrap.js'%}"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
+         <!-- Custom Js -->
+    <script src="{%static 'js/custom-scripts.js'%}"></script>
+    
+   
+</body>
+</html>
+
+{% endblock content %}

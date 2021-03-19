@@ -1,0 +1,15 @@
+requests
+uWSGI
+Django
+django-allauth
+django-contrib-postgres
+django-crispy-forms
+django-filter
+django-formset-js
+django-jquery-js 
+django-multiselectfield
+django-oauth-toolkit 
+django-search-views 
+djangorestframework
+Pillow
+python-dotenv

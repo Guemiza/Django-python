@@ -1,0 +1,46 @@
+{% include "blog/index.html" %}
+{% block content %}
+<div class="content-section">
+  <div class="content-section">
+      <div id="page-wrapper" >
+          <div class="header"> 
+                <h1 class="page-header">
+                       <small></small>
+                            </h1>   								
+              </div>          
+        <div id="page-inner"> 
+                     
+          <div class="row">
+              <div class="col-md-12">
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+      
+      
+     
+      </div>
+      <ol class="breadcrumb">
+     
+        {% if user.is_authenticated %}
+        <h2 >Username :{{ object.username}}</h2>
+      <h2 class="article-title"> Last Name: {{ object.last_name}}</h2>
+      <h2 class="article-title">First Name :{{ object.first_name}}</h2>
+      <h2 style="color: blue;">email :{{object.email}}</h2>
+      
+      <br/>   <br/>
+    
+  
+    
+      <a  class="btn btn-primary" href="{% url 'list' %}">Cancel</a>
+      {% endif %} 
+    </div>
+
+
+</article>
+
+</div>
+</div>
+</div>
+  </article>
+{% endblock content %}
+

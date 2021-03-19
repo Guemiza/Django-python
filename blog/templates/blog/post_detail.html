@@ -1,0 +1,41 @@
+{% include "blog/index.html" %}
+{% block content %}
+<div class="content-section">
+  <div class="content-section">
+      <div id="page-wrapper" >
+          <div class="header"> 
+                <h1 class="page-header">
+                       <small></small>
+                            </h1>   								
+              </div>          
+        <div id="page-inner"> 
+                     
+          <div class="row">
+              <div class="col-md-12">
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+      
+      
+     
+      </div>
+      <ol class="breadcrumb">
+
+        <small class="text-muted">Date of creation: {{ object.date_posted|date:"F d, Y" }}</small><br/>
+      <h2 class="article-title">Name of project : {{ object.Project_name}}</h2>
+      <h2 class="article-title">Identifiat :{{object.Identifiat}}</h2>
+      <h2 class="article-title">Project description :{{ object.project_description}}</h2>
+      <h2 class="article-title">visibility Level :{{ object.visibility_Level}}</h2>
+      <br/>   <br/>
+    
+    </div>
+
+
+</article>
+
+</div>
+</div>
+</div>
+  </article>
+{% endblock content %}
+

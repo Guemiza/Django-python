@@ -1,0 +1,66 @@
+{% include "blog/index.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+        <title>Register Form</title>
+    </head>
+    <body>
+        <div class="content-section">
+        <div class="content-section">
+            <div id="page-wrapper" >
+                <div class="header"> 
+                      <h1 class="page-header">
+                             <small>Register User</small>
+                                  </h1>
+                         								
+                    </div>          
+              <div id="page-inner"> 
+                           
+                <div class="row">
+                    <div class="col-md-12">
+        <div class="content-section">
+        <div id="logreg-forms">
+            <form class="form-signin" method="POST">    
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Create User</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+        <button class="btn btn-success" type="submit"><i class="fa fa-plus"></i> Register</button>
+        <a class="btn btn-warning" href="{% url 'list' %}">Back</a>
+  
+    </form>
+    <br>
+ </div>
+ </div>
+ </div>
+ </div>   
+</div>
+<p style="text-align:center">
+<a href="http://bit.ly/2RjWFMfunction toggleResetPswd(e){
+e.preventDefault();
+$('#logreg-forms .form-signin').toggle() // display:block or none
+$('#logreg-forms .form-reset').toggle() // display:block or none
+}
+
+function toggleSignUp(e){
+e.preventDefault();
+$('#logreg-forms .form-signin').toggle(); // display:block or none
+$('#logreg-forms .form-signup').toggle(); // display:block or none
+}
+
+$(()=>{
+// Login Register Form
+$('#logreg-forms #forgot_pswd').click(toggleResetPswd);
+$('#logreg-forms #cancel_reset').click(toggleResetPswd);
+$('#logreg-forms #btn-signup').click(toggleSignUp);
+$('#logreg-forms #cancel_signup').click(toggleSignUp);
+})g" target="_blank" style="color:black"></a>
+</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="/script.js"></script>
+</body>
+</html>
+{% endblock content %}

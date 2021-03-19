@@ -1,0 +1,33 @@
+{% include "blog/index.html" %}
+{% block content %}
+<div class="content-section">
+  <div class="content-section">
+      <div id="page-wrapper" >
+          <div class="header"> 
+                <h1 class="page-header">
+                       <small></small>
+                            </h1>   								
+              </div>          
+        <div id="page-inner"> 
+                     
+          <div class="row">
+              <div class="col-md-12">
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+      <ol class="breadcrumb">
+      <small class="text-muted">Date of creation: {{ object.date_posted|date:"F d, Y" }}</small><br/>
+      <h2 class="article-title"> Namespace: {{ object.Name }}</h2>
+      {% if object.status == None %} 
+      <h2 class="article-title">Age :Active</h2>  {%endif%}
+      <h2 class="article-title">User:{{ object.User }}</h2> 
+  <br/><br/>  
+  <a  class="btn btn-warning" href="{% url 'permission-update' post.id %]">Update</a>
+  <a   class="btn btn-danger" href="#">Delete</a>
+    <a  class="btn btn-primary" href="{% url 'blog-about' %}">Cancel</a>
+  </article>
+  </div>
+  </div>
+  </div>
+</div>
+{% endblock content %}

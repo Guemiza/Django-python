@@ -1,6 +1,6 @@
 app: 
   container_name: app
-  restart: a
+  restart: always
   build: .
   ports:
     - "8000:8000"

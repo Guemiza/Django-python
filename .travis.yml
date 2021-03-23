@@ -10,7 +10,7 @@ before_deploy:
 deploy:
   provider: script
   script: 
-  - docker tag  amelgm/python    
+  - docker tag  python amelgm/python    
   - docker push amelgm/python    
   on:
     branch: main

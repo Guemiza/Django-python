@@ -9,6 +9,6 @@ before_deploy:
 
 deploy:
   provider: script
-  script: docker push amelgm/django
+  script: docker push amelgm/python
   on:
     branch: main

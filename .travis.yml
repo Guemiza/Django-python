@@ -4,3 +4,11 @@ services :
 script:
 - docker build -t python:latest .
 - docker images 
+before_deploy:
+  - docker login -u amelgm -p amoulache
+deploy:
+  provider:script
+  script:
+  docker push amelgm/Django
+  on:
+    master

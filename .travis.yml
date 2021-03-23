@@ -9,6 +9,6 @@ before_deploy:
 deploy:
   provider:script
   script:
-  docker push amelgm/Django
+  docker push amelgm/django
   on:
     master

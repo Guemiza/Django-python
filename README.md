@@ -2,6 +2,7 @@
 it’s a Django-python project that allows the getion of projects in gitlab,kubernets and redmine to cross-api
 
 the commands necessary to download and start the project in your local:
+
 1- Downloading the project
 git clone /https-github.com-Guemiza-Django-python.git-
 

@@ -5,10 +5,10 @@ script:
 - docker build -t python:latest .
 - docker images 
 before_deploy:
-- docker login -u amelgm  -p amoulache
+- docker login -u amelgm  -p amoulache123
 
 deploy:
   provider: script
-  script: docker push amelgm/django_python
+  script: docker push amelgm/django
   on:
-    branch: master
+    branch: main

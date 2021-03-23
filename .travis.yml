@@ -9,6 +9,8 @@ before_deploy:
 
 deploy:
   provider: script
-  script: docker push python
+  script: 
+  - docker tag  django_python amelgm/django_python
+  - docker push amelgm/django_python
   on:
     branch: main

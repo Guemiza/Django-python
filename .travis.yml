@@ -11,4 +11,4 @@ deploy:
   provider: script
   script: docker push amelgm/django_python
   on:
-    branch: master
+    branch: main

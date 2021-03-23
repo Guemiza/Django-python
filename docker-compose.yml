@@ -1,0 +1,7 @@
+app: 
+  container_name: app
+  restart: a
+  build: .
+  ports:
+    - "8000:8000"
+ 

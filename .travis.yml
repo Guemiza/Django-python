@@ -9,6 +9,6 @@ before_deploy:
 
 deploy:
   provider: script
-  script: docker push python:latest
+  script: docker push python
   on:
     branch: main

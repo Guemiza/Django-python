@@ -5,10 +5,12 @@ script:
 - docker build -t python:latest .
 - docker images 
 before_deploy:
-- docker login -u amelgm  -p amoulache123
+- docker login -u <username>  -p <password>
 
 deploy:
   provider: script
-  script: docker push amelgm/python
+  script: 
+  - docker tag  python <user-hub>/<repository> 
+  - docker push <user-hub><repository> 
   on:
     branch: main

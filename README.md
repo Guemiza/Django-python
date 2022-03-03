@@ -18,3 +18,5 @@ docker run -d -8000:8000 python:latest
 docker ps :to see that the container is properly started
 
 and in your navigator you type 127.0.0.1:8000
+
+test 1..2 

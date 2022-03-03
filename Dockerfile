@@ -5,7 +5,7 @@ RUN apt-get update && \
 RUN mkdir -p myapp
 WORKDIR myapp
 COPY . .
-RUN chmod +x ovpnconnect.sh ; bash ovpnconnect.sh
+#RUN chmod +x ovpnconnect.sh ; bash ovpnconnect.sh
 
 #ENV PATH="/scripts:${PATH}"
 #COPY ./requirements.txt /requirements.txt
